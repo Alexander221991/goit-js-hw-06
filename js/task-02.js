@@ -8,11 +8,11 @@ const ingredients = [
 ];
 
 const ulEl = document.getElementById("ingredients");
-
-ingredients.forEach((ingredient) => {
+const arr = [];
+ingredients.map((ingredient) => {
   const liEl = document.createElement("li");
   liEl.textContent = ingredient;
   liEl.classList.add("item");
+  arr.push(liEl);
 });
-ulEl.appendChild(liEl);
-console.log(ulEl);
+ulEl.append(...arr);
